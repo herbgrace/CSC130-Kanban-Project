@@ -1,0 +1,22 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Anime",
+    "Webscraping"
+  ],
+  "license": "ISC",
+  "author": "Makaden Espinosa",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "anime-heaven": "^1.0.0",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}

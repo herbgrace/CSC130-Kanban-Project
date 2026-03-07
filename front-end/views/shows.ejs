@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Saved Shows</title>
+    <link rel="stylesheet" href="/css/scraper.css">
+</head>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <h1>Your Favorite Shows!</h1>
+
+    <% if (errorMessage) { %>
+        <p><%= errorMessage %></p>
+    <% } %>
+
+    <ul class="results-grid">
+        <% (results || []).forEach(result => { %>
+            <li class="result-item">
+                <div class="result-content">
+                    <h2 class="anime-title"><%= result.title %></h2>
+                    <br>
+                    <a class="anime-link" href="<%= result.url %>" target="_blank" rel="noopener noreferrer">Open Source</a>
+                </div>
+                <img src="<%= result.image %>" alt="<%= result.title %>" class="anime-poster">
+            </li>
+        <% }) %>
+    </ul>
+
+    <% if (!results || results.length === 0) { %>
+        <p>No saved shows found yet.</p>
+    <% } %>
+</body>
+
+
+</html>

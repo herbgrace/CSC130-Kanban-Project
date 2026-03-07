@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <main class="layout">
+        <section class="card hero">
+            <h1>Welcome to Anime Web Scrape!</h1>
+            <p>
+                Search for anime and view key information pulled from a public source in a simple, readable format.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>What we are</h2>
+            <p>
+                We are a web application that allows users to search for anime and view information about them.
+                We use web scraping to gather data from various anime websites and present it in a user-friendly format.
+            </p>
+            <p>
+                We do not own any of the information, IP, or content displayed on this site. We currently pull from:
+            </p>
+            <ul>
+                <li><a href="https://animeheaven.me/" target="_blank" rel="noopener noreferrer">Anime Heaven</a></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Want to get started?</h2>
+            <p>
+                Use the links below to view the scraping page or log in to save your favorite anime.
+            </p>
+            <div class="cta-row">
+                <a class="btn" href="/scrape">Open Scraping Page</a>
+                <a class="btn btn-secondary" href="/login">Login</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

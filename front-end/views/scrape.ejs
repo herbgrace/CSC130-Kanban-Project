@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrape</title>
+    <link rel="stylesheet" href="/css/scraper.css">
+</head>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <h1>Scrape</h1>
+    <form action="/scrape" method="POST">
+        <label for="animeTitle">Anime Title:</label>
+        <input type="text" id="animeTitle" name="animeTitle" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <ul class="results-grid">
+        <% results.forEach(result => { %>
+            <li class="result-item">
+                <div class="result-content">
+                    <h2 class="anime-title"><%= result.title %></h2>
+                    <br>
+                    <a class="anime-link" href="<%= result.url %>" target="_blank" rel="noopener noreferrer">Open Source</a>
+                    <button
+                        class="save-btn"
+                        data-title="<%= result.title %>"
+                        data-url="<%= result.url %>"
+                        data-image="<%= result.image %>"
+                        onclick="saveShow(this.dataset.title, this.dataset.url, this.dataset.image)">
+                        Save
+                    </button>
+                </div>
+                <img src="<%= result.image %>" alt="<%= result.title %>" class="anime-poster">
+            </li>
+        <% }) %>
+    </ul>
+    <script src="/js/scrapeFunctions.js"></script>
+</body>
+
+
+</html>
