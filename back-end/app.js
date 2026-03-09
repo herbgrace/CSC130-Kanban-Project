@@ -3,11 +3,12 @@ const session = require('express-session');
 require('dotenv').config();
 const app = express();
 const dal = require('./data/mongoDAL');
+const frontendport = 9000;
 const port = 9001;
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'http://localhost:9000', // front-end origin
+    origin: `http://localhost:${frontendport}`, // front-end origin
     credentials: true
 }));
 app.use(express.static('public'));

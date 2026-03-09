@@ -1,7 +1,8 @@
 const express = require('express');
 const { animesearch, animeinfo, animedl } = require("anime-heaven");
 const app = express();
-const port = 3000;
+const port = 9000;
+const backend_port = 9001;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -46,7 +47,7 @@ app.post('/scrape', async (req, res) => {
 
 app.get('/shows', async (req, res) => {
     try {
-        const response = await fetch('http://localhost:3001/shows', {
+        const response = await fetch(`http://localhost:${backend_port}/shows`, {
             headers: {
                 'Cookie': req.headers.cookie || ''
             }

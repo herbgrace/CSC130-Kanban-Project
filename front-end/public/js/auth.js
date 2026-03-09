@@ -1,4 +1,5 @@
 const authMessage = document.getElementById('authMessage');
+const backendPort = 9001;
 
 function showMessage(message, isError = true) {
     if (!authMessage) {
@@ -14,7 +15,8 @@ function showMessage(message, isError = true) {
 
 async function submitAuthForm(endpoint, username, password, successRedirect) {
     try {
-        const response = await fetch(`http://localhost:3001/${endpoint}`, {
+        console.log("submitting form", { endpoint, username, password });
+        const response = await fetch(`http://localhost:${backendPort}/${endpoint}`, {
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
@@ -22,6 +24,7 @@ async function submitAuthForm(endpoint, username, password, successRedirect) {
         });
 
         const data = await response.json();
+        console.log(data);
 
         if (!response.ok) {
             showMessage(data.message || 'Request failed. Please try again.');

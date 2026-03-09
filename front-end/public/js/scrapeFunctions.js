@@ -1,6 +1,8 @@
+const backendPort = 9001;
+
 async function saveShow(title, url, image) {
     try{
-    const response = await fetch('http://localhost:3001/shows', {
+    const response = await fetch(`http://localhost:${backendPort}/shows`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
