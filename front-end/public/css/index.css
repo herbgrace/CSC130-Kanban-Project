@@ -1,10 +1,10 @@
 :root {
-	--bg: #111827;
-	--surface: #1f2937;
+	--bg: #1c1127;
+	--surface: #2d1f37;
 	--text: #e5e7eb;
 	--muted: #9ca3af;
-	--primary: #60a5fa;
-	--primary-soft: #374151;
+	--primary: #a855f7;
+	--primary-soft: #6b21a8;
 	--border: #4b5563;
 }
 
@@ -70,10 +70,42 @@ body {
 	padding: 1.5rem;
 }
 
+.card h1 {
+	margin-top: 0;
+	margin-bottom: 0.65rem;
+	font-size: 1.35rem;
+}
+
 .hero h1 {
 	margin-top: 0;
 	margin-bottom: 0.65rem;
 	font-size: clamp(1.6rem, 2.5vw, 2rem);
+}
+
+#loginForm label, #registerForm label {
+	min-block-size: 20rem;
+}
+
+#loginForm button, #registerForm button {
+	display: inline-block;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--primary);
+	margin-top: 0.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+	background-color: transparent;
+	color: var(--primary);
+	cursor: pointer;
+}
+
+#loginForm button:hover, #registerForm button:hover {
+    background-color: rgba(96, 165, 250, 0.12);
+}
+
+.loginUsername, .loginPassword, 
+.registerUsername, .registerPassword {
+	margin-top: 0.5rem;
 }
 
 h2 {
@@ -115,14 +147,14 @@ a {
 }
 
 .btn:hover {
-	background-color: #3b82f6;
+	background-color: #7c3aed;
 }
 
 .btn-secondary {
-	background-color: var(--primary-soft);
+	background-color: var(--primary);
 	color: var(--text);
 }
 
 .btn-secondary:hover {
-	background-color: #4b5563;
+	background-color: #7c3aed;
 }

@@ -8,17 +8,23 @@
 </head>
 <body>
     <%- include("partials/nav.ejs") %>
-    <h1>Register</h1>
-    <form id="registerForm" action="/register" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Register</button>
-    </form>
-    <p id="authMessage"></p>
+    <main class="layout">
+        <section class="card">
+            <h1>Register</h1>
+            <form id="registerForm" action="/register" method="POST">
+                <div class="registerUsername">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="registerPassword">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p id="authMessage"></p>
+        </section>
+    </main>
     <script src="/js/auth.js"></script>
 </body>
 </html>

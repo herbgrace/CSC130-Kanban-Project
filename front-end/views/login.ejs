@@ -8,17 +8,23 @@
 </head>
 <body>
     <%- include("partials/nav.ejs") %>
-    <h1>Login</h1>
-    <form id="loginForm" action="/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-    <p id="authMessage"></p>
+    <main class="layout">
+    <section class="card">
+        <h1>Login</h1>
+        <form id="loginForm" action="/login" method="POST">
+            <div class="loginUsername">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="loginPassword">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p id="authMessage"></p>
+    </section>
+    </main>
     <script src="/js/auth.js"></script>
 </body>
 </html>
